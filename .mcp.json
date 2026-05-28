@@ -18,15 +18,14 @@
         "GITHUB_TOKEN": "${GITHUB_TOKEN}"
       }
     },
-    "supabase": {
-      "command": "npx",
+    "postgres": {
+      "command": "sh",
       "args": [
-        "-y",
-        "@supabase/mcp-server-supabase"
+        "-c",
+        "npx -y @modelcontextprotocol/server-postgres \"$SUPABASE_DB_URL\""
       ],
       "env": {
-        "SUPABASE_URL": "${SUPABASE_URL}",
-        "SUPABASE_SERVICE_ROLE_KEY": "${SUPABASE_SERVICE_ROLE_KEY}"
+        "SUPABASE_DB_URL": "${SUPABASE_DB_URL}"
       }
     },
     "fetch": {
@@ -50,8 +49,8 @@
         "@upstash/mcp-server"
       ],
       "env": {
-        "UPSTASH_REDIS_REST_URL": "${UPSTASH_REDIS_REST_URL}",
-        "UPSTASH_REDIS_REST_TOKEN": "${UPSTASH_REDIS_REST_TOKEN}"
+        "UPSTASH_EMAIL": "${UPSTASH_EMAIL}",
+        "UPSTASH_API_KEY": "${UPSTASH_API_KEY}"
       }
     }
   }
