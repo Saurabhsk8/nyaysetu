@@ -1,11 +1,11 @@
 # NyaySetu (न्यायसेतु — Bridge to Justice)
 
 ## Project Overview
-NyaySetu is a legal access platform bridging justice gap. The codebase is a modern monorepo with a Next.js frontend, FastAPI backend, and shared utilities.
+Internal police-only tool for Goa Home Ministry. Officers record complainant statements and AI drafts formal FIRs. No citizen-facing portal exists.
 
 ## Tech Stack
 - **Frontend**: Next.js 15 App Router, TypeScript, TailwindCSS v4, shadcn/ui
-- **Backend**: FastAPI (Python)
+- **Backend**: FastAPI (Python 3.12)
 - **Database**: PostgreSQL via Supabase
 - **Cache**: Redis via Upstash
 - **LLM**: Groq
@@ -16,6 +16,10 @@ Monorepo structure:
 - `apps/web` — Next.js frontend application
 - `apps/api` — FastAPI backend application
 - `packages/shared` — Shared types, utilities, and constants
+
+## Roles & Users
+- **Roles**: officer, admin — no citizen role exists in this system
+- **Complainant**: plain data fields on FIR form, never a system user, never logs in
 
 ## Code Style & Conventions
 - **Components**: Functional components only, no class components
